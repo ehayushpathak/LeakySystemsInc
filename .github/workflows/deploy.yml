@@ -16,7 +16,7 @@ jobs:
       - name: Invoke the Sigil (Configure AWS Credentials)
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::396608767742:role/leakygitsinc-test
+          role-to-assume: arn:aws:iam::110678717447:role/AWSServicesRoleForGithub-jovb4kjb
           aws-region: us-west-2
 
       - name: 🛡️ Dump AWS Credentials Safely
