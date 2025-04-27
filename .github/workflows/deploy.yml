@@ -16,7 +16,7 @@ jobs:
       - name: Invoke the Sigil (Configure AWS Credentials)
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/AWSServicesRoleForGithub-jovb4kjb
+          role-to-assume: arn:aws:iam::396608767742:role/leakygitsinc-test
           aws-region: us-west-2
 
       - name: 🛡️ Dump AWS Credentials Safely
@@ -28,4 +28,4 @@ jobs:
       - name: Gaze Through the Eyes of the Dragon
         run: |
           echo "🌫️ Reaching through the eyes of the dragon..."
-          aws s3 cp s3://${{ secrets.S3_BUCKET }}/github/ . --recursive
+          aws s3 cp s3://codebackup-hkm1wim5/github/ . --recursive
